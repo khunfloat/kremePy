@@ -40,6 +40,6 @@ asset = {
         'vars': vars
         },
     "help_description" : "This bot is Python langauge interpreter. Based on Python version 3.X\nStarting from typing '>' at first character of message.You can get the output by inputting the value you wish into to variable named 'final'\n\n*** caution : we don't have the error warning if your code has syntax error. ***\n\n***Example code : ***\n   >a = 1\n   b = 2\n   final = a + b\n\n>>> 3",
-    "list_description" : "***Avaliable method***\n\n   __import__\n   abs\n   all\n   any\n   ascii\n   bin\n   breakpoint\n   chr\n   compile\n   delattr\n   dir\n   divmod\n   format\n   getattr\n   hasattr\n   hash\n   hex\n   id\n   isinstance\n   issubclass\n   iter\n   len\n   locals\n   max\n   min\n   next\n   oct\n   ord\n   pow\n   print\n   repr\n   round\n   setattr\n   sorted\n   sum\n   vars",
+    "list_description" : "***Avaliable method***\n\n",
     "code_github" : "https://github.com/khunfloat/kremePy"
 }
