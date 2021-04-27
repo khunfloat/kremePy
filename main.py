@@ -1,47 +1,10 @@
 import discord
 import random
+import asset
 
 def run_program(code):
     globalsParamiter = {'__builtins__': None}
-    localsparamiter = {
-        '__import__' : __import__,
-        'abs': abs, 
-        'all': all, 
-        'any': any, 
-        'ascii': ascii, 
-        'bin': bin, 
-        'breakpoint': breakpoint, 
-        'callable': callable, 
-        'chr': chr, 
-        'compile': compile, 
-        'delattr': delattr, 
-        'dir': dir, 
-        'divmod': divmod,
-        'format': format, 
-        'getattr': getattr, 
-        'hasattr': hasattr, 
-        'hash': hash, 
-        'hex': hex, 
-        'id': id, 
-        'isinstance': isinstance, 
-        'issubclass': issubclass, 
-        'iter': iter, 
-        'len': len, 
-        'locals': locals, 
-        'max': max, 
-        'min': min, 
-        'next': next, 
-        'oct': oct, 
-        'ord': ord, 
-        'pow': pow, 
-        'print': print, 
-        'repr': repr, 
-        'round': round, 
-        'setattr': setattr, 
-        'sorted': sorted, 
-        'sum': sum, 
-        'vars': vars
-        }
+    localsparamiter = asset.asset['avaliable_method']
     exec(code, globalsParamiter, localsparamiter)
     return f"{code} \n >>> {localsparamiter['final']}"
 
@@ -64,16 +27,19 @@ async def on_message(message):
     if message.channel.name == "kremepy": #text channel name
 
         if user_message == ";help":
-            await message.channel.send("Bot description")
+            await message.channel.send(asset.asset['help_description'])
             return
         elif user_message[0] == ">":
             await message.channel.send(run_program(user_message[1:]))
             return
         elif user_message == ";list":
-            await message.channel.send("Avaliable method")
+            await message.channel.send(asset.asset['list_description'])
+            return
+        elif user_message == ";code":
+            await message.channel.send(asset.asset['code_github'])
             return
         else:
             await message.channel.send("Get the help by type ';help")
             return
 
-client.run("MY_TOKEN")
+client.run(asset.asset['TOKEN'])
