@@ -33,7 +33,10 @@ async def on_message(message):
             await message.channel.send(run_program(user_message[1:]))
             return
         elif user_message == ";list":
-            await message.channel.send(asset.asset['list_description'])
+            string = ""
+            for method in asset.asset["avaliable_method"]:
+                string += "   -" + str(method) + '\n'
+            await message.channel.send(asset.asset['list_description'] + string)
             return
         elif user_message == ";code":
             await message.channel.send(asset.asset['code_github'])
