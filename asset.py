@@ -1,5 +1,5 @@
 asset = {
-    "TOKEN" : "TOKEN_H3R3",
+    "TOKEN" : "pfx1bpzCF5NwHWiXKSIXduiRSpRHVFSb",
     "avaliable_method" : {
         '__import__' : __import__,
         'abs': abs, 
